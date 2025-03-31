@@ -549,7 +549,7 @@ button:hover {
 }
 @media (max-width: 768px) {
     .contato-container {
-        max-width: 350px;
+        max-width: 300px;
         margin-top: 100%;
     }
     .contato-icons a img {
