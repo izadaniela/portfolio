@@ -457,7 +457,7 @@ nav ul li a:hover {
     align-items: center;
     flex-direction: column; /* Empilha os itens na vertical */
     width: 100%; /* Garante que a largura seja total */
-    padding: 40px 20px; /* Ajusta o padding */
+    padding: 30px 15px; /* Ajusta o padding */
 }
 }
 
