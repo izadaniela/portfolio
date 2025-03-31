@@ -14,7 +14,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(242, 238, 231, 0.87);
+    background: white;
     padding: 15px 20px;
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -126,7 +126,6 @@ nav ul li a:hover {
  
 }
 
-
 .part1 {
     top: +20px;
     left: +25px;
@@ -177,12 +176,13 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: auto; /* Ajusta a altura da seção de acordo com o conteúdo */
-    padding-bottom: 20px; /* Garante um pequeno espaçamento inferior */
+    height: auto;
+    padding-bottom: NONE; /* Garante um pequeno espaçamento inferior */
 }
 
 .sobre-container {
     display: flex;
+    justify-content: center;
     background: #7883e473;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -291,9 +291,9 @@ nav ul li a:hover {
 
 #projetos {
     text-align: center;
-    padding: 50px 0;
-    margin-top: 40px; /* Adiciona espaço entre as seções */
-    height: auto; /* Garante que a altura se ajuste automaticamente */
+    padding: 50px;
+    margin-top: 4px; /* Adiciona espaço entre as seções */
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -371,10 +371,6 @@ nav ul li a:hover {
     box-shadow: rgb(0, 0, 0);
 }
 
-    /*conhecimentos*/
-
-/* Container para a seção de conhecimentos */
-/* Container para a seção de conhecimentos */
 .conhecimentos-container {
     display: flex;
     justify-content: center;
@@ -384,6 +380,9 @@ nav ul li a:hover {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    height: auto;
+    z-index: 1;
+    overflow: auto;
 }
 
 /* Título "Meus Conhecimentos" */
@@ -397,13 +396,12 @@ nav ul li a:hover {
     font-size: 45px;
     margin-bottom: 15px;
     color: #14176b;
-    width: 100%;
 }
 
 #descricao-texto {
     font-size: 20px;
     color: #ffffff;
-    margin-top: 20px; /* Distância do título */
+    margin-top: 20px;
     text-align: center;
 }
 
@@ -428,25 +426,6 @@ nav ul li a:hover {
     width: 100%;
 }
 
-/* Para esconder a descrição no mobile até ser clicado */
-#descricao-mobile {
-    display: none; /* Inicialmente escondido */
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-    color: white;
-    text-align: center;
-    position: relative;
-    top: 20px;
-    left: 0;
-    right: 0;
-    width: 100%;
-}
-
-/* Exibe a descrição no mobile quando o ícone for clicado */
-.conhecimento-box.active #descricao-mobile {
-    display: block;
-}
-
 /* Estilo para as imagens dos ícones */
 .conhecimento-box img {
     width: 80px;
@@ -454,7 +433,7 @@ nav ul li a:hover {
     object-fit: cover;
 }
 
-/* Hover de boxes no desktop */
+/* Exibe a descrição quando o mouse passa sobre o ícone (Desktop) */
 .conhecimento-box:hover {
     background: #7883e473;
     border: 2px solid #2c34af;
@@ -462,48 +441,31 @@ nav ul li a:hover {
 
 /* Media Query para Mobile */
 @media (max-width: 768px) {
-    /* Ajustes para o título no mobile */
-    .descricao h2 {
-        font-size: 30px;
-        margin-bottom: 10px;
-    }
-
-    #descricao-texto {
-        font-size: 16px;
-    }
-
-    /* Grid de boxes para mobile (2 colunas) */
     .conhecimentos-grid {
         grid-template-columns: repeat(2, 1fr);
         width: 90%;
         gap: 15px;
     }
-
-    /* Ajuste nas boxes no mobile */
-    .conhecimento-box {
-        padding: 20px;
-        margin-bottom: 15px;
+    .descricao {
+       margin-top: 50%;
+    }
+    #conhecimentos {
+        padding: 40px 20px; /* Diminui o padding nas laterais para que o conteúdo não fique apertado */
+        margin-bottom: 50px; /* Adiciona uma margem abaixo para criar espaço entre as seções */
     }
 
-    /* Ajuste da exibição da descrição no mobile */
-    .descricao-projeto {
-        display: none;
-    }
-
-    /* Exibe a descrição no mobile quando o ícone for clicado */
-    .conhecimento-box.active #descricao-mobile {
-        display: block;
-    }
 }
 
 #contato {
     color: #14176b;
     text-align: center;
-    padding: 60px 20px;
+    padding: 1px 20px;
+    height: auto;
+    
 }
 
 .contato-container {
-    max-width: 600px;
+    max-width: 400px;
     margin: 0 auto;
     background: #7883e473;
     padding: 30px;
@@ -560,6 +522,7 @@ button:hover {
     transform: scale(1.1); /* Aumenta o tamanho do botão */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra mais visível */
     background: linear-gradient(145deg, #00048f, #717efc); /* Inverte o gradiente */
+    cursor: pointer;
 }
 
 .contato-icons {
@@ -570,13 +533,27 @@ button:hover {
 }
 
 .contato-icons a img {
-    width: 80px; /* Defina o tamanho desejado */
-    height: 80px;
+    width: 50px; /* Defina o tamanho desejado */
+    height: 50px;
     object-fit: cover
 }
 
 .contato-icons a img:hover {
     transform: scale(1.1);
+
+}
+@media (max-width: 768px) {
+    .contato-container {
+        max-width: 350px;
+        margin-top: 100%;
+    }
+    .contato-icons a img {
+        width: 50px;
+    }
+    #contato {
+        padding: 60px 20px;
+        margin-top: 20px; /* Dá um pequeno espaço antes da seção de contato */
+    }
 }
 footer {
     background: #0c119baf;
@@ -584,9 +561,8 @@ footer {
     text-align: center;
     padding: 20px 10px;
     font-size: 14px;
-    position: relative;
-    bottom: 0;
     width: 100%;
+    position: relative;
 }
 
 .footer-container {
@@ -605,3 +581,33 @@ footer {
 .footer-logo img:hover {
     transform: scale(1.1);
 }
+@media (max-width: 768px) {
+    .contato-container {
+        margin-top: 20px; /* Ajustando o espaçamento no mobile */
+    }
+}
+.section {
+    min-height: 100vh; /* Garante que cada seção ocupe a tela inteira */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    transition: opacity 0.8s ease-in-out;
+    padding-top: 60px; /* Ajuste para evitar que o conteúdo fique atrás do menu fixo */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 5px; /* Ajuste de acordo com a altura do menu fixo */
+}
+#conhecimentos, #contato {
+    min-height: 100vh; /* Garante que as seções tenham altura mínima de 100% da tela */
+    display: flex;
+    flex-direction: column; /* Alinha os itens na vertical */
+    align-items: center; /* Centraliza os itens */
+}
+
