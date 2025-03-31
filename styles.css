@@ -441,18 +441,24 @@ nav ul li a:hover {
 /* Media Query para Mobile */
 @media (max-width: 768px) { 
     .conhecimentos-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas para dispositivos móveis */
         width: 90%;
-        gap: 15px;
+        gap: 15px; /* Diminui o espaçamento entre os ícones */
     }
     .descricao {
        margin-top: 50%;
     }
     #conhecimentos {
-        padding: 40px 20px; /* Diminui o padding nas laterais para que o conteúdo não fique apertado */
         margin-bottom: 50px; /* Adiciona uma margem abaixo para criar espaço entre as seções */
   }
-
+  .conhecimentos-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Empilha os itens na vertical */
+    width: 100%; /* Garante que a largura seja total */
+    padding: 40px 20px; /* Ajusta o padding */
+}
 }
 
 #contato {
