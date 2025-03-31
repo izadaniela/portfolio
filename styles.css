@@ -458,8 +458,8 @@ nav ul li a:hover {
 #contato {
     color: #14176b;
     text-align: center;
-    padding: 40px 20px; /* Ajuste o padding para garantir que o conteúdo não fique apertado */
-    margin-top: 50px; /* Adiciona espaçamento superior */
+    padding: 1px 20px;
+    height: auto;
     
 }
 
@@ -469,9 +469,8 @@ nav ul li a:hover {
     background: #7883e473;
     padding: 30px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    margin-top: 50px; /* Ajuste o margin-top para garantir que a seção "contato" tenha um bom espaçamento */
+    margin-top: 8%;
 }
-
 
 .contato-container h2 {
     font-size: 28px;
@@ -544,22 +543,17 @@ button:hover {
 }
 @media (max-width: 768px) {
     .contato-container {
-        max-width: 90%; /* Ajusta a largura para dispositivos móveis */
-        padding: 20px;
-        margin-top: 30px; /* Reduz a margem superior para criar um bom espaçamento */
+        max-width: 350px;
+        margin-top: 100%;
     }
-    
-    .section {
-        height: auto; /* Permite que o conteúdo se ajuste conforme necessário */
+    .contato-icons a img {
+        width: 50px;
     }
-
-    .sobre-container,
-    .projetos-container {
-        flex-direction: column; /* Organiza as seções de maneira mais vertical */
-        align-items: center;
+    #contato {
+        padding: 60px 20px;
+        margin-top: 20px; /* Dá um pequeno espaço antes da seção de contato */
     }
 }
-
 footer {
     background: #0c119baf;
     color: white;
@@ -592,16 +586,15 @@ footer {
     }
 }
 .section {
+    min-height: 100vh; /* Garante que cada seção ocupe a tela inteira */
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; /* Adiciona essa linha para empilhar os itens na vertical */
-    padding: 20px; /* Adiciona um pequeno espaçamento interno */
     font-size: 24px;
     font-weight: bold;
     transition: opacity 0.8s ease-in-out;
+    padding-top: 60px; /* Ajuste para evitar que o conteúdo fique atrás do menu fixo */
 }
-
 
 html {
     scroll-behavior: smooth;
