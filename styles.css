@@ -7,7 +7,7 @@
 }
 
 body {
-    background: linear-gradient(110deg, #0006c1, #6a77f0);
+    background: linear-gradient(110deg, #0108bc, #6a77f0);
 }
 
 header {
@@ -617,4 +617,3 @@ section {
     flex-direction: column; /* Alinha os itens na vertical */
     align-items: center; /* Centraliza os itens */
 }
-
