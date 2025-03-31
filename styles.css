@@ -452,8 +452,13 @@ nav ul li a:hover {
     #conhecimentos {
         padding: 40px 20px; /* Diminui o padding nas laterais para que o conteúdo não fique apertado */
         margin-bottom: 50px; /* Adiciona uma margem abaixo para criar espaço entre as seções */
-    }
-
+  }
+  .descricao {
+    text-align: center;
+}
+#descricao-texto {
+    text-align: center;
+}
 }
 
 #contato {
