@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
 //email
 document.getElementById("form-contato").addEventListener("submit", function(event) {
     event.preventDefault();
