@@ -557,7 +557,7 @@ button:hover {
     }
     #contato {
         padding: 60px 20px;
-        margin-top: 20px; /* Dá um pequeno espaço antes da seção de contato */
+        margin-top: 30px; /* Dá um pequeno espaço antes da seção de contato */
     }
 }
 footer {
