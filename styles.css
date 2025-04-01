@@ -7,7 +7,7 @@
     }
 
     body {
-        background: linear-gradient(110deg, #161682, #616cd5);
+        background: linear-gradient(110deg, #161682, #616cd5, #161682);
     }
 
     header {
@@ -179,7 +179,7 @@
         height: auto;
         padding-bottom: NONE; /* Garante um pequeno espaçamento inferior */
     }
-
+    
     .sobre-container {
         display: flex;
         justify-content: center;
@@ -191,75 +191,79 @@
         align-items: center;
         gap: 20px; /* Adiciona um pequeno espaçamento entre a imagem e o texto */
     }
-
-    /* Estilo da foto original */
+    
     .sobre-imagem img {
         width: 400px;
         height: auto;
         transition: transform 0.3s ease;
     }
-
+    
     .sobre-imagem img:hover {
         transform: scale(1.05);  /* Efeito de zoom na imagem original */
     }
-
+    
     .nome-com-underline {
         text-decoration: underline;
         cursor: pointer;
     }
-
-    /* Estilo do modal (janela pop-up para a foto) */
-    .modal {
-        display: none; /* Inicialmente escondido */
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
-        justify-content: center;
-        align-items: center;
-    }
-
-    .modal-content {
-        max-width: 80%;
-        max-height: 80%;
-        margin: auto;
-        display: block;
-    }
-
-    .close-btn {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        font-size: 30px;
-        color: white;
-        cursor: pointer;
-    }
-
-    /* Efeito para a janela modal */
-    .modal.show {
-        display: flex;
-    }
-
+    
     .sobre-texto {
         color: #ffffff;
         flex: 1; /* Faz o texto ocupar o espaço restante */
     }
-
+    
     .sobre-texto h2 {
         font-size: 35px;
         margin-bottom: 10px;
         color: #14176b;
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
-
+    
     .sobre-texto p {
         font-size: 21px;
         line-height: 1.5;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     }
+    
+    /* Modal */
+    .modal {
+        display: none; /* Escondido por padrão */
+        position: fixed;
+        z-index: 1; /* Fica em cima de outros elementos */
+        left: 0;
+        top: 0;
+        width: 50%;
+        height: 50%;
+        background-color: rgba(0,0,0,0.4); /* Cor de fundo */
+        padding-top: 10px;
+        overflow: auto;
+    }
+    
+    .modal-content {
+        margin: auto;
+        margin-top: 5%;
+        display: block;
+        width: 80%;
+        max-width: 350px; /* Ajuste de largura máxima da imagem */
+    }
+    
+    .close {
+        color: #fff;
+        position: absolute;
+        top: 100px;
+        right: 25px;
+        font-size: 36px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
 
     @media (max-width: 768px) {
         .sobre-container {
@@ -287,7 +291,38 @@
             font-size: 18px; /* Ajusta o tamanho do texto */
             max-width: 90%; /* Limita a largura do texto para não ficar muito largo */
         }
+        .modal-content {
+            width: 90%; /* A imagem ocupará 90% da largura da tela no modal */
+        }
+    
+        .close {
+            font-size: 30px; /* Tamanho reduzido do botão de fechar */
+        }
     }
+    
+    /* Para dispositivos de até 480px (smartphones) */
+    @media screen and (max-width: 480px) {
+        .sobre-imagem img {
+            width: 250px; /* Ajusta a largura da imagem para smartphones */
+        }
+    
+        .sobre-texto h2 {
+            font-size: 24px;
+        }
+    
+        .sobre-texto p {
+            font-size: 16px;
+        }
+    
+        .modal-content {
+            width: 95%; /* A imagem ocupará 95% da largura da tela no modal */
+        }
+    
+        .close {
+            font-size: 24px; /* Tamanho reduzido do botão de fechar */
+        }
+    }
+    
 
     #projetos {
         text-align: center;
@@ -299,24 +334,24 @@
         justify-content: center;
         align-items: center;
     }
-
+    
     .titulo-projetos {
         font-size: 40px;
         font-weight: bold;
         color: #ffffff;
         margin-bottom: 50px;
     }
-
+    
     .projetos-container {
         display: flex;
-        justify-content: center; 
-        align-items: center; 
+        justify-content: center;
+        align-items: center;
         gap: 20px;
-        flex-wrap: wrap; 
-        max-width: 1100px; 
+        flex-wrap: wrap;
+        max-width: 1100px;
         width: 100%;
     }
-
+    
     .projeto-box {
         width: 320px;
         padding: 25px;
@@ -327,24 +362,24 @@
         transition: transform 0.3s ease;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.274); /* Adicionando sombra na borda */
     }
-
+    
     .projeto-box h3 {
         font-size: 24px;
         margin-bottom: 10px;
         color: #14176b;
     }
-
+    
     .projeto-box p {
         font-size: 16px;
         color: #ffffff;
         margin-bottom: 20px;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     }
-
+    
     .projeto-box:hover {
         transform: scale(1.05);
     }
-
+    
     .btn-projeto {
         text-decoration: none;
         background: #7883e473;
@@ -359,18 +394,121 @@
         transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
         border: none;
     }
-
+    
     .btn-projeto:hover {
         transform: scale(1.1); /* Aumenta o tamanho do botão */
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra mais visível */
-        background: linear-gradient(145deg, #00048f, #717efc); /* Inverte o gradiente */
+        background: linear-gradient(145deg, #161682, #616cd5); /* Inverte o gradiente */
     }
-
+    
     .btn-projeto:focus {
         outline: none;
         box-shadow: rgb(0, 0, 0);
     }
-
+    
+    /* Modal */
+    .modal {
+        display: none; /* Escondido por padrão */
+        position: fixed;
+        z-index: 1; /* Fica em cima de outros elementos */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0); /* Cor de fundo */
+        background-color: rgba(0,0,0,0.4); /* Opacidade */
+        padding-top: 60px;
+    }
+    
+    /* Modal Content */
+    .modal video {
+        margin: auto;
+        display: block;
+        width: 80%; /* Tamanho do vídeo ajustado para telas maiores */
+    }
+    
+    /* Close button */
+    .close {
+        color: #fff;
+        float: right;
+        font-size: 30px;
+        font-weight: bold;
+        padding: 20px;
+    }
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    /* Responsividade: Ajustes para telas menores */
+    
+    /* Ajustes para telas de até 768px (tablets e dispositivos menores) */
+    @media screen and (max-width: 768px) {
+        .projeto-box {
+            width: 280px;
+            padding: 20px;
+        }
+    
+        .titulo-projetos {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+    
+        .projeto-box h3 {
+            font-size: 22px;
+        }
+    
+        .projeto-box p {
+            font-size: 14px;
+        }
+    
+        .btn-projeto {
+            font-size: 14px;
+            padding: 10px 25px;
+        }
+    
+        .modal video {
+            width: 90%; /* O vídeo ficará maior em dispositivos menores */
+        }
+    }
+    
+    /* Ajustes para telas de até 480px (smartphones) */
+    @media screen and (max-width: 480px) {
+        #projetos {
+            padding: 20px;
+        }
+    
+        .projeto-box {
+            width: 100%; /* Deixa as caixas de projeto com largura total */
+            padding: 15px;
+        }
+    
+        .titulo-projetos {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+    
+        .projeto-box h3 {
+            font-size: 20px;
+        }
+    
+        .projeto-box p {
+            font-size: 12px;
+        }
+    
+        .btn-projeto {
+            font-size: 14px;
+            padding: 10px 20px;
+        }
+    
+        .modal video {
+            width: 100%; /* O vídeo ocupará 100% da largura da tela em dispositivos móveis */
+        }
+    }
+    
     .conhecimentos-container {
         display: flex;
         justify-content: center;
@@ -527,7 +665,7 @@
     button:hover {
         transform: scale(1.1); /* Aumenta o tamanho do botão */
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra mais visível */
-        background: linear-gradient(145deg, #00048f, #717efc); /* Inverte o gradiente */
+        background: linear-gradient(145deg, #161682, #616cd5); /* Inverte o gradiente */
         cursor: pointer;
     }
 
@@ -550,7 +688,7 @@
     }
     @media (max-width: 768px) {
         .contato-container {
-            max-width: 300px;
+            max-width: 390px;
             margin-top: 100%;
             margin-bottom: 30%;
         }
@@ -558,7 +696,7 @@
             width: 40px;
         }
         #contato {
-            padding: 60px 20px;
+            padding: 80px 40px;
             margin-top: 50px; /* Dá um pequeno espaço antes da seção de contato */
         }
     }
