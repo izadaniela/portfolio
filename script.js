@@ -28,12 +28,16 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-function openVideo(videoId) {
-    const videoElement = document.getElementById(videoId);
-    if (videoElement) {
-        videoElement.style.display = "block"; // Torna o vídeo visível
-    }
+// Função para abrir o modal
+function openVideoModal() {
+    document.getElementById("videoModal").style.display = "block";
 }
+
+// Função para fechar o modal
+function closeVideoModal() {
+    document.getElementById("videoModal").style.display = "none";
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const boxes = document.querySelectorAll(".conhecimento-box");
     const descricaoTexto = document.getElementById("descricao-texto");
@@ -77,3 +81,27 @@ document.getElementById("form-contato").addEventListener("submit", function(even
     
     window.location.href = mailtoLink;
 });
+
+// Obtém os elementos do DOM
+var nome = document.getElementById("nome");
+var modal = document.getElementById("modal-imagem");
+var imagemModal = document.getElementById("imagem-modal");
+var span = document.getElementsByClassName("close")[0];
+
+// Função para abrir o modal com a imagem
+nome.onclick = function() {
+    modal.style.display = "block";
+    imagemModal.src = "img/izadani.jpg"; // Altere o caminho da imagem que deseja exibir
+}
+
+// Função para fechar o modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// Fecha o modal se o usuário clicar fora da imagem
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
